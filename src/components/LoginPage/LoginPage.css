@@ -1,0 +1,220 @@
+:root {
+  --curve-radius: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-form-section {
+  flex: 1;
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: white;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+  
+}
+
+.login-image-section {
+  flex: 1;
+  min-width: 50%;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+  padding-right: 20px; /* Adds 20px gap on the right */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.login-bg-image {
+  width:  calc(100% - 20px); 
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--curve-radius);
+  
+  
+}
+
+/* Enlarged form elements */
+.login-welcome {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  text-align: left;
+  color: #333;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-input {
+  padding: 1rem;
+  border: 1px solid #745bad;
+  background-color: #E4E1EB;
+  border-radius: 10px;
+  font-size: 1rem;
+  height: 50px;
+}
+
+.form-input::placeholder {
+  color: #534a4a;
+}
+
+.forgot-password {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5A1699;
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-left: auto; 
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1rem; /* Adjust as needed */
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.login-button {
+  height: 55px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  background: #623FB5;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 60%; /* Adjust width as needed */
+  max-width: 200px;
+}
+
+.login-button:hover {
+  background: #8a58fd;
+}
+
+
+/* Social Login Buttons */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.social-button {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  position: relative;
+  padding: 1rem 1rem 1rem 3rem; /* Left padding for icon space */
+  height: 55px;
+  width: 60%;
+  margin: 0 auto; /* This centers the button horizontally */
+  border: 1px solid #E4E1EB;
+  border-radius: 8px;
+  background: #E4E1EB;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-button:hover {
+  background: #d5d1e0;
+}
+
+.social-icon-container {
+  position: absolute;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.social-button-text {
+  width: 100%;
+  text-align: center;
+}
+.meta-button .social-icon{
+    color: #1877f2;
+}
+/* Keep other styles the same as previous version */
+.forgot-password {
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.login-divider {
+  margin: 2rem 0;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.divider-text {
+  font-size: 0.9rem;
+  color: #413e3e;
+  text-transform: uppercase;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #636060 ;
+}  
