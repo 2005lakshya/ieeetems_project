@@ -1,0 +1,26 @@
+.decorations {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.pizza {
+  position: absolute;
+  
+  left: -10%;
+  width: clamp(100px, 20vw, 200px);
+  height: auto;
+
+  z-index: 1;
+  pointer-events: none;
+}
+.cupcake {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+  width: clamp(80px, 12vw, 150px);
+  height: auto;
+  transform: rotate(-3deg);
+  z-index: 2;
+  pointer-events: none;
+}
