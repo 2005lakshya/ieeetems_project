@@ -1,38 +1,318 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Alexandria", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* NAVBAR WRAPPER */
+.navbar {
+  width: 100vw;
+  height: 168px;
+  background: #510993F2;
   display: flex;
-  flex-direction: column;
+  position: relative;
+}
+
+/* CONTENT GROUP */
+.navbar-content {
+  width: 1389px;
+  height: 86.74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  border-radius: 24.11px;
+  position: absolute;
+  top: 27px;
+  left: 28px;
+}
+
+/* LOGO BOX */
+.logo-box {
+  border-radius: 24.11px;
+  display: flex;
+  align-items: center;
+  height: 86.74px;
+  width: auto;
+}
+
+/* LOGO TEXT */
+.logo-text {
+  font-family: Alexandria, sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: #FFFFFF;
+  margin-left: 20px; /* Padding for spacing */
+}
+
+/* NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  gap: 36px;
+  margin-right: 1px;
+}
+
+/* BUTTON STYLE */
+.nav-btn {
+  width: fit-content;
+  padding: 14px 20px;
+  background: #8569E4;
+  border: none;
+  border-radius: 24.11px;
+  font-family: Alexandria, sans-serif;
+  font-size: 24.11px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #6a50c4;
+}
+
+
+/* Banner */
+.banner-container {
+  width: 100vw;
+  height: auto;
+  margin-top: 0; /* no gap */
+}
+
+.banner-image {
+  width: 100vw;
+  height: auto;
+  display: block;
+  border-radius: 0; /* no rounded edges */
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  width: 127px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px auto 0;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #dac8ff;
+}
+.dot.active {
+  background-color: #623fb5;
+}
+
+/* Search Bar */
+.search-container {
+  position: relative;
+  width: 1184px;
+  height: 73px;
+  /*background: #f4ecff;
+  border: 1.5px solid #6b39bc;*/
+  border-radius: 40px;
+  margin: 30px auto 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.search-input {
+  width: 1184px;
+  height: 73px;
+  border-radius: 40px;
+  background: #F4ECFF;
+  border: 1.5px solid #6B39BC;
+  padding: 0 80px 0 30px; /* left padding for text, right for icon */
+  font-family: Alexandria;
+  font-size: 30px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  width: 100%;
+  font-family: Alexandria, sans-serif;
+  font-size: 30px;
+  background: #f4ecff;
+  color: #8569E496;
+  border: none;
+  outline: none;
+}
+.search-icon {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  right: 20px;
+}
+
+/* Trending Section */
+.trending-section {
+  margin: 50px 48px 0;
+  position: relative;
+}
+.trending-title {
+  font-family: Alexandria, sans-serif;
+  font-size: 38px;
+  background-color: #FFFFFF;
+  width: 213px;
+  height: 42px;
+  color: #6339BC;
+  padding-left: 10px;
+}
+.restaurant-cards {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+}
+.restaurant-card {
+  width: 352px;
+  height: 395px;
+  background: #DAC8FF;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.restaurant-img {
+  width: 352px;
+  height: 235px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.restaurant-info {
+  padding: 15px;
+}
+.restaurant-name {
+  font-family: Alexandria, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 20px;
+  letter-spacing: 0%;
+}
+
+.restaurant-address {
+  font-size: 16px;
+  font-family: Alexandria;
+  font-weight: 400;
+  color: #555252;
+  margin-bottom: 8px;
+}
+
+.restaurant-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-number {
+  font-size: 20px;
+  font-family: Alexandria;
+  font-weight: 400;
+  color: #262626;
+}
+.restaurant-stars {
+  width: 137px;
+  height: 30px;
+}
+
+/* Arrow Button */
+.arrow-btn {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 85px;
+  height: 120px;
+}
+.arrow-btn img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* CATEGORIES */
+.categories-section {
+  padding: 50px;
+}
+
+.categories-title {
+  font-family: Alexandria, sans-serif;
+  font-size: 38px;
+  font-weight: 400;
+  background: #FFFFFF;
+  color:  #6339BC;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.category-card {
+  width: 352px;
+  height: 110px;
+  border-radius: 30px;
+  border: 1.5px solid #4B188E;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: "";
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.51;
+  z-index: 1;
+}
+
+.category-card[data-image]::before {
+  background-image: var(--bg);
+}
+
+.category-text {
+  position: relative;
+  z-index: 2;
+  font-family: Alexandria;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+  color: #36007C;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* FOOTER */
+.footer {
+  width: 100vw;
+  height: 168px;
+  background: #510993F2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ieee-logo img {
+  width: 382.97px;
+  height: 94px;
 }
+
