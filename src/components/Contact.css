@@ -1,0 +1,40 @@
+.decorations{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.momos {
+  position: absolute;
+  
+  top:45px;
+  
+  left:-205px;
+  width: clamp(120px, 20vw, 329.15px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* Responsive airplanedown */
+.airplanedown {
+  position: absolute;
+
+  right: -80px;
+  width: clamp(200px, 30vw, 536.47px);
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+/* Responsive juice */
+.juice {
+  position: absolute;
+  bottom: 10%;
+  left: -4%;
+  width: clamp(100px, 15vw, 180px);
+  height: auto;
+  transform: translateX(-50%) rotate(-1.1deg);
+  pointer-events: none;
+}
