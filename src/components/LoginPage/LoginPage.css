@@ -21,19 +21,18 @@ html, body {
 
 .login-form-section {
   flex: 1;
-  min-width: 50%;
+  height: 100vh;
+  overflow-y: auto; /* Enables vertical scroll */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 2rem;
-  background: white;
 }
 
 .login-content {
   width: 100%;
-  max-width: 600px;
-  padding: 0;
-  
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .login-image-section {
@@ -44,6 +43,9 @@ html, body {
   margin: 20px;
   padding-right: 20px; /* Adds 20px gap on the right */
   box-sizing: border-box; /* Ensures padding is included in width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-bg-image {
