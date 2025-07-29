@@ -10,6 +10,11 @@ const LoginPage = () => {
       <div className="row g-0">
         <div className="col-lg-6 login-form-section d-flex">
           <div className="login-content">
+
+            <div className="login-bg-mobile">
+              <img src={loginBg} alt="Background" className="login-bg-image-mobile" />
+            </div>
+            
             <h1 className="login-welcome">Welcome</h1>
             <LoginForm />
             <div className="login-divider">
