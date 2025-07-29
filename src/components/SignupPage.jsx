@@ -10,6 +10,10 @@ const SignupPage = () => {
       <div className="row g-0">
         <div className="col-lg-6 login-form-section d-flex">
           <div className="login-content">
+            <div className="login-bg-mobile">
+              <img src={loginBg} alt="Background" className="login-bg-image-mobile" />
+            </div>
+
             <h1 className="login-welcome">Create Account</h1>
             <SignupForm />
             <div className="login-divider">
