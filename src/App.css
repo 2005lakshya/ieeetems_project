@@ -5,12 +5,29 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 .banner-image {
+  margin-top: 100px;
   width: 100%;
   height: auto;
-  max-height: 70vh; 
+  max-height: 70vh;
   object-fit: cover;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .banner-image {
+    margin-top: 60px;
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-image {
+    margin-top: 40px;
+    max-height: 40vh;
+  }
 }

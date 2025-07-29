@@ -20,8 +20,8 @@
 .airplanedown {
   position: absolute;
 
-  right: -80px;
-  width: clamp(200px, 30vw, 536.47px);
+  right: -50px;
+  width: clamp(100px, 15vw, 300px);
   height: auto;
   pointer-events: none;
   z-index: 1;

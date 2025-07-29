@@ -12,7 +12,17 @@ const Team = () => (
     <img src={cupcake} alt="cupcake" className="cupcake"/>
     </div>
     <h2>Our Team</h2>
-    <p>
+    <p
+      style={{
+          fontFamily: "'Alexandria-Regular', Helvetica, sans-serif",
+          fontSize: "clamp(1.8rem, 1.8vw, 1.8rem)",
+          color: "#623fb5",
+          lineHeight: "1.5",
+          textAlign: "center",
+          maxWidth: "1000px",
+          margin: "0 auto"
+        }}
+    >
       We are a passionate community of students committed to pushing the boundaries of technology and engineering management. At IEEE TEMS VIT,
        we foster innovation, leadership, and collaboration by creating a space where ideas thrive and projects come to life. Through hands-on
         workshops, seminars, and tech competitions, our members gain practical experience and stay ahead in the ever-evolving tech landscape.
