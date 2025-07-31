@@ -1,9 +1,16 @@
 import React from "react";
+import { Code } from "lucide-react";
 import "./Footer.css"; 
-import temsLogo from "../assets/TemsLogo.svg"
+
 const Footer = () => (
   <footer className="footer">
-    <p className="md"> MADE BY:<img src={temsLogo} alt="Logo"className="TemsLogo"/></p>
+    <div className="footer-content">
+      <p className="footer-text">
+        Made with 
+        <Code size={16} className="footer-icon" />
+        by TEMS Team
+      </p>
+    </div>
   </footer>
 );
 

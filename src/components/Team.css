@@ -1,5 +1,5 @@
 .team-section {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   margin: 0;
   border-radius: 0;
 }
@@ -8,7 +8,7 @@
 .team-values {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
   max-width: 1200px;
   width: 100%;
@@ -27,11 +27,12 @@
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   transition: all 0.4s ease;
   max-width: 280px;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .value-card::before {
@@ -51,45 +52,50 @@
 }
 
 .value-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .value-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin: 0 auto 1.5rem auto;
   border-radius: 50%;
   background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
 }
 
 .value-card:hover .value-icon {
   transform: rotate(360deg) scale(1.1);
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  box-shadow: 0 12px 35px rgba(96, 165, 250, 0.5);
 }
 
-.team-icon {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+.team-icon-lucide {
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .value-card h3 {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  font-size: 1.4rem;
+  font-family: "Inter", "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 1.3rem;
   color: #1e293b;
   font-weight: 600;
   margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
+}
+
+.value-card:hover h3 {
+  color: #60a5fa;
 }
 
 .value-card p {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  font-size: 1rem;
+  font-family: "Inter", "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 0.95rem;
   color: #64748b;
   line-height: 1.6;
   margin: 0;
@@ -106,14 +112,27 @@
   }
   
   .value-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .team-icon-lucide {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .value-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .value-card p {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
   .team-section {
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     margin: 1rem;
   }
   

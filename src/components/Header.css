@@ -1,112 +1,219 @@
+/* CSS Variables for Theme */
+:root {
+  /* Light Mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  /* Dark Mode */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --accent-primary: #818cf8;
+  --accent-secondary: #a78bfa;
+  --accent-gradient: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 .header {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 48px;
-  height: 80px;
-  width: 100%;
-  position: absolute;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  backdrop-filter: blur(20px);
+  padding: 1rem 2rem;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
+
+.header.scrolled {
+  background: rgba(102, 126, 234, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+[data-theme="dark"] .header {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+[data-theme="dark"] .header.scrolled {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  font-size: 28px; 
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
 }
 
 .logo:hover {
-  transform: scale(1.05);
   color: #fef3c7;
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(15deg);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .theme-toggle {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
 }
 
 .nav-buttons {
   display: flex;
-  gap: 32.6px;
-  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.nav-buttons .btn {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  padding: 0.4rem 1.5rem;
-  font-size: 18px; 
-  border: none;
-  border-radius: 27px;
-  background-color: #f59e0b;
-  color: #ffffff;
+.btn {
+  font-family: "Inter", sans-serif;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
   font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  height: 38px;
-  min-width: 120px; 
   transition: all 0.3s ease;
-  letter-spacing: 0%;
-  line-height: 100%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  position: relative;
-  overflow: hidden;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-buttons .btn:hover {
-  background-color: #d97706;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
 }
 
-.nav-buttons .btn:active {
-  transform: translateY(0px);
+.btn-ghost:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
 }
 
+.btn-primary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 1.5rem;
+    padding: 1rem;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .logo {
-    font-size: 40px;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
   }
 
-  .nav-buttons {
-    width: 100%;
-    justify-content: flex-start;
+  .nav-controls {
+    gap: 0.75rem;
   }
 
-  .nav-buttons .btn {
-    font-size: 20px;
-    min-width: 130px;
-    height: 56px;
+  .btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
-  .logo {
-    font-size: 32px;
-  }
-
   .nav-buttons {
     flex-direction: column;
-    gap: 12px;
-    width: 100%;
+    gap: 0.5rem;
   }
 
-  .nav-buttons .btn {
-    width: 100%;
-    font-size: 18px;
-    min-width: unset;
+  .btn {
+    width: 100px;
   }
 }
