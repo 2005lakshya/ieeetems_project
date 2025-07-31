@@ -1,70 +1,135 @@
+/* Hero Banner Section */
 .banner {
-  width: 100%;
-  position: relative;
+  height: 100vh;
+  background: var(--accent-gradient);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: relative;
   overflow: hidden;
   padding: 0;
   margin: 0;
-  height: 75vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+  opacity: 0.15;
+  z-index: 1;
 }
 
 .banner-image {
-  margin-top: 80px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: all 0.4s ease;
-  filter: brightness(0.7) contrast(1.1);
-}
-
-.banner-image:hover {
-  transform: scale(1.02);
-  filter: brightness(0.8) contrast(1.2);
+  display: none;
 }
 
 .banner-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 800px;
+  padding: 0 2rem;
   color: white;
-  z-index: 100;
-  padding: 2rem;
-  background: rgba(0,0,0,0.5);
-  border-radius: 15px;
-  backdrop-filter: blur(8px);
 }
 
 .banner-title {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+  font-weight: 800;
+  margin: 0 0 1.5rem 0;
   color: white;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 0.8s ease;
 }
 
 .banner-subtitle {
-  font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   font-weight: 400;
-  margin: 0;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-  color: #f0f0f0;
+  margin: 0 0 2.5rem 0;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease 0.4s both;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-decoration: none;
+}
+
+/* Floating Food Icons */
+.floating-food {
+  position: absolute;
+  z-index: 2;
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.6;
+  color: white;
+}
+
+.food-1 { top: 15%; left: 8%; animation-delay: 0s; }
+.food-2 { top: 25%; right: 12%; animation-delay: 2s; }
+.food-3 { bottom: 20%; left: 12%; animation-delay: 4s; }
+.food-4 { bottom: 15%; right: 18%; animation-delay: 1s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global App Styles */
+.App {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .App {
+  background: #0f172a;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .banner {
-    height: 60vh;
-  }
-  
-  .banner-image {
-    margin-top: 60px;
+    height: 80vh;
   }
   
   .banner-overlay {
@@ -72,26 +137,28 @@
     margin: 0 1rem;
   }
   
-  .banner-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+  .floating-food {
+    display: none;
   }
   
-  .banner-subtitle {
-    font-size: clamp(1rem, 3vw, 1.4rem);
+  .cta-button {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .banner {
-    height: 50vh;
-  }
-  
-  .banner-image {
-    margin-top: 40px;
+    height: 70vh;
   }
   
   .banner-overlay {
     padding: 1rem;
     margin: 0 0.5rem;
+  }
+  
+  .cta-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
   }
 }
