@@ -1,8 +1,92 @@
 .about-section {
   position: relative;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-  background: white;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  transition: all 0.3s ease;
+}
+
+/* Benefits Showcase - Align with left layout */
+.benefits-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.left-align .benefits-showcase {
+  justify-items: flex-start;
+}
+
+.right-align .benefits-showcase {
+  justify-items: flex-end;
+}
+
+/* Marquee Effects */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 1rem 0;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.marquee-container.reverse {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.marquee {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee.reverse {
+  animation: scrollReverse 25s linear infinite;
+}
+
+.marquee span {
+  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  padding-right: 4rem;
+  letter-spacing: 2px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scrollReverse {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee span {
+    font-size: 1rem;
+    padding-right: 2rem;
+  }
+  
+  .marquee {
+    animation-duration: 15s;
+  }
+  
+  .marquee.reverse {
+    animation-duration: 18s;
+  }
 }
 
 .decorations {
@@ -12,27 +96,220 @@
   margin-bottom: 2rem;
 }
 
-/* Airplane SVG */
-.airplane {
-  position: absolute;
-  width: clamp(200px, 40vw, 570.5px);
-  height: auto; 
-  top: -25%;
-  left: -15%;
- 
-  z-index: 1;
-  pointer-events: none;
+/* Enhanced Benefits Showcase */
+.benefits-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
+.benefit-card {
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
 
-/* Donut SVG */
-.donut {
+.benefit-card::before {
+  content: '';
   position: absolute;
-  top: 5%;
-  right: 5%;
-  width: clamp(80px, 15vw, 150px);
-  height: auto;
-  transform: rotate(0.26deg);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.benefit-card:hover::before {
+  opacity: 1;
+}
+
+.benefit-card:hover {
+  transform: translateY(-20px) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   z-index: 2;
-  pointer-events: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.2) rotate(360deg);
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.icon-emoji {
+  font-size: 2rem;
+  filter: brightness(0) invert(1);
+}
+
+.benefit-card h3 {
+  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: #2d3748;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.benefit-card:hover h3 {
+  color: #667eea;
+}
+
+.benefit-card p {
+  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-accent {
+  transform: scaleX(1);
+}
+
+/* Statistics Section */
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-item {
+  text-align: center;
+  position: relative;
+}
+
+.stat-number {
+  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  animation: countUp 2s ease-out;
+}
+
+.stat-label {
+  font-family: "Alexandria-Regular", Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  
+  .benefit-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .icon-emoji {
+    font-size: 1.8rem;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .benefit-card p {
+    font-size: 0.9rem;
+  }
+  
+  .stats-section {
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 2rem 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .benefit-card {
+    margin: 0 1rem;
+  }
 }

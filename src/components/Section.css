@@ -1,9 +1,53 @@
 .section {
-  padding: 3rem 1.5rem;
+  padding: 5rem 2rem;
   font-family: "Alexandria-Regular", Helvetica, sans-serif;
   text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+/* Left Aligned Sections */
+.section.left-align {
+  background: linear-gradient(135deg, #f8f4ff 0%, #e8d5ff 100%);
+  text-align: left;
+}
+
+.section.left-align .section-content {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 2rem;
+}
+
+/* Right Aligned Sections */
+.section.right-align {
+  background: linear-gradient(135deg, #fff4f0 0%, #ffe4d6 100%);
+  text-align: right;
+}
+
+.section.right-align .section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 2rem;
+}
+
+/* Center Aligned Sections (Default) */
+.section.center-align {
+  background: linear-gradient(135deg, #f0fff4 0%, #d6ffdd 100%);
+  text-align: center;
+}
+
+.section.center-align .section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .decorations {
@@ -13,30 +57,41 @@
   gap: 2rem;
   flex-wrap: wrap;
   margin-bottom: clamp(1rem, 4vw, 3rem);
-
 }
-
 
 .section h2 {
   color: #4B188E;
-  font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3.5rem); 
-  line-height: 100%;
-  margin-bottom: clamp(2rem, 5vw, 5.5rem);
-
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem); 
+  line-height: 110%;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Paragraph */
 .section p {
   font-weight: 400;
-  
-  font-size: 33px;
-
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
   color: #623fb5;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
- 
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1rem;
+  }
   
+  .section.left-align .section-content,
+  .section.right-align .section-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    text-align: center;
+  }
   
+  .section.left-align,
+  .section.right-align {
+    text-align: center;
+  }
 }

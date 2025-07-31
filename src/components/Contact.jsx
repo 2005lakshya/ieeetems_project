@@ -1,34 +1,58 @@
 import React from "react";
 import "./Section.css";
-import momos from"../assets/momos.svg";
+import momos from "../assets/momos.svg";
 import airplanedown from "../assets/airplanedown.svg"
 import juice from "../assets/juice.svg";
 import "./Contact.css";
 
-
 const Contact = () => (
-  <section className="section">
-    <div className="decorations">
-        <img src={momos} alt="momos" className="momos"/>
-        <img src={airplanedown} alt="airplanedown" className="airplanedown"/>
-         <img src={juice } alt="juice " className="juice "/>
+  <section className="section contact-section left-align">
+    <div className="section-content">
+      <h2>Get In Touch</h2>
+      <p className="contact-description"
+        style={{
+            fontFamily: "'Alexandria-Regular', Helvetica, sans-serif",
+            fontSize: "clamp(1.2rem, 2vw, 1.5rem)",
+            color: "#623fb5",
+            lineHeight: "1.6",
+            maxWidth: "800px",
+            marginBottom: "4rem"
+          }}
+        >
+        Have a question, suggestion, or found a great restaurant we missed? We'd love to hear from you! 
+        Help us make FoodFinder even better for the VIT community.
+      </p>
+    
+    {/* Contact Methods */}
+    <div className="contact-methods">
+      <div className="contact-card">
+        <div className="contact-icon">
+          <img src={momos} alt="Email" className="contact-image" />
         </div>
-    <h2>Contact Us</h2>
-    <p 
-      style={{
-          fontFamily: "'Alexandria-Regular', Helvetica, sans-serif",
-          fontSize: "clamp(1.8rem, 1.8vw, 1.8rem)",
-          color: "#623fb5",
-          lineHeight: "1.5",
-          textAlign: "center",
-          maxWidth: "1000px",
-          margin: "0 auto"
-        }}
-      >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-       in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </p>
+        <h3>📧 Email Us</h3>
+        <p>Drop us a line anytime</p>
+        <span className="contact-info">foodfinder@vit.edu</span>
+      </div>
+      
+      <div className="contact-card">
+        <div className="contact-icon">
+          <img src={airplanedown} alt="Feedback" className="contact-image" />
+        </div>
+        <h3>💡 Send Feedback</h3>
+        <p>Share your ideas and suggestions</p>
+        <span className="contact-info">feedback@foodfinder.com</span>
+      </div>
+      
+      <div className="contact-card">
+        <div className="contact-icon">
+          <img src={juice} alt="Support" className="contact-image" />
+        </div>
+        <h3>🆘 Need Help?</h3>
+        <p>We're here to assist you</p>
+        <span className="contact-info">support@foodfinder.com</span>
+      </div>
+    </div>
+    </div>
   </section>
 );
 

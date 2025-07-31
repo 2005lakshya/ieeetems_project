@@ -1,10 +1,10 @@
 .header {
-  background: #510993F2;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  height: 115px;
+  height: 80px;
   width: 100%;
   position: absolute;
   top: 0;
@@ -12,14 +12,23 @@
   z-index: 1000;
   box-sizing: border-box;
   flex-wrap: wrap;
- 
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
 }
 .logo {
   font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  font-size: 38px; 
-  font-weight: 400;
+  font-size: 28px; 
+  font-weight: 600;
   color: #ffffff;
   margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #fef3c7;
 }
 
 .nav-buttons {
@@ -30,23 +39,32 @@
 
 .nav-buttons .btn {
   font-family: "Alexandria-Regular", Helvetica, sans-serif;
-  padding: 0.5rem 2rem;
-  font-size: 22px; 
+  padding: 0.4rem 1.5rem;
+  font-size: 18px; 
   border: none;
   border-radius: 27px;
-  background-color: #8569e4;
+  background-color: #f59e0b;
   color: #ffffff;
-  font-weight: 400;
+  font-weight: 500;
   cursor: pointer;
-  height: 45px;
-  min-width: 151px; 
-  transition: 0.3s;
+  height: 38px;
+  min-width: 120px; 
+  transition: all 0.3s ease;
   letter-spacing: 0%;
   line-height: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
 }
 
 .nav-buttons .btn:hover {
-  background-color: #a388f0;
+  background-color: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.nav-buttons .btn:active {
+  transform: translateY(0px);
 }
 
 
