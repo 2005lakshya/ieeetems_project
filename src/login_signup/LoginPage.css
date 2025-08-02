@@ -40,13 +40,13 @@
 
 .back-button {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  gap: 0.2rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -59,7 +59,7 @@
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   transform: translateY(-1px);
 }
 
@@ -107,6 +107,7 @@
 }
 
 .welcome-title {
+  margin-top: 2rem;
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--login-text-primary);

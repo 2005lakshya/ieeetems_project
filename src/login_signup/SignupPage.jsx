@@ -17,7 +17,7 @@ const SignupPage = () => {
     <div className="modern-login-container">
       <button className="back-button" onClick={goBack}>
         <ArrowLeft size={20} />
-        <span>Back to Home</span>
+        <span>Home</span>
       </button>
 
       <div className="login-layout">
